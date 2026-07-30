@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(mkdir -p /Users/jojo/Desktop/pottershousechiba_website/images)",
+      "Bash(find /Users/jojo/.claude/projects/-Users-jojo-Desktop-pottershousechiba-website -newer /Users/jojo/Desktop/pottershousechiba_website/images/logo.png -type f 2>/dev/null | head -50)",
+      "Bash(pkill -f \"http.server 8791\")"
+    ]
+  }
+}
