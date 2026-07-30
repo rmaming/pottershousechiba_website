@@ -26,6 +26,11 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   background: var(--cream);
@@ -221,7 +226,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(14,23,48,0.55) 0%, rgba(14,23,48,0.82) 100%);
 }
-.hero-inner { position: relative; z-index: 1; padding: 100px 0 70px; }
+.hero-inner { position: relative; z-index: 1; padding-top: 100px; padding-bottom: 70px; }
 .hero h1 { color: var(--white); }
 .hero .tagline-red { color: #ff6b6b; }
 .hero p.lead {
@@ -321,13 +326,22 @@ a { color: inherit; text-decoration: none; }
 .footer-links li { margin-bottom: 10px; }
 .social-row { display: flex; gap: 12px; margin-top: 14px; }
 .social-row a {
-  width: 38px; height: 38px;
+  width: 44px; height: 44px;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(255,255,255,0.08);
+  background: var(--white);
+  border: 1px solid var(--line);
   border-radius: 50%;
-  transition: background 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.social-row a:hover { background: var(--red); }
+.social-row a svg { width: 22px; height: 22px; display: block; }
+.social-row a:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+/* Footer sits on navy, so social icons need a dark-friendly badge */
+.site-footer .social-row a {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+.site-footer .social-row a:hover { background: rgba(255,255,255,0.16); }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.12);
   padding-top: 22px;
@@ -418,20 +432,35 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Contact / info blocks ---------- */
 .info-row {
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding: 14px 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+.info-row:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
 .info-row .icon {
   flex-shrink: 0;
-  width: 42px; height: 42px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   background: rgba(210,31,46,0.1);
-  color: var(--red);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem;
 }
-.section--navy .info-row .icon { background: rgba(255,255,255,0.12); color: var(--white); }
+.info-row .icon svg { width: 24px; height: 24px; display: block; }
+.info-row .icon--whatsapp { background: rgba(37,211,102,0.12); }
+.info-row .icon--gmail { background: rgba(234,67,53,0.1); }
+.info-row .icon--line { background: rgba(6,199,85,0.12); }
+.info-row--primary {
+  background: rgba(6,199,85,0.05);
+  border-color: rgba(6,199,85,0.3);
+}
+.info-row .value { font-weight: 600; color: var(--red-deep); overflow-wrap: break-word; word-break: break-word; }
+.info-row:hover .value { text-decoration: underline; }
+.info-row > div:last-child { min-width: 0; flex: 1; }
+.section--navy .info-row { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
 
 .schedule-card {
   background: var(--white);

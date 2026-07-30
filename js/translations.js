@@ -46,9 +46,11 @@ window.TRANSLATIONS = {
 
     "home.contact.eyebrow": "Send Us a Message",
     "home.contact.title": "We'd Love to Hear From You",
+    "home.contact.recommended": "Fastest way to reach us",
+    "home.contact.lineLabel": "LINE",
+    "home.contact.lineCta": "Add us on LINE",
     "home.contact.whatsappLabel": "WhatsApp",
     "home.contact.emailLabel": "Email",
-    "home.contact.lineLabel": "LINE",
     "home.contact.instagramLabel": "Instagram",
     "home.contact.facebookLabel": "Facebook",
 
@@ -187,9 +189,11 @@ window.TRANSLATIONS = {
 
     "home.contact.eyebrow": "メッセージを送る",
     "home.contact.title": "お気軽にご連絡ください",
+    "home.contact.recommended": "一番つながりやすい方法です",
+    "home.contact.lineLabel": "LINE",
+    "home.contact.lineCta": "LINEで友だち追加する",
     "home.contact.whatsappLabel": "WhatsApp",
     "home.contact.emailLabel": "メール",
-    "home.contact.lineLabel": "LINE",
     "home.contact.instagramLabel": "Instagram",
     "home.contact.facebookLabel": "Facebook",
 
