@@ -260,7 +260,11 @@ a { color: inherit; text-decoration: none; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 860px) {
-  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .grid-3 { grid-template-columns: 1fr; }
 }
 
 .card {
@@ -302,6 +306,22 @@ a { color: inherit; text-decoration: none; }
 }
 .photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: none; }
 .photo-slot span { position: relative; z-index: 1; max-width: 220px; }
+
+.photo-grid-item { min-height: 200px; }
+@media (max-width: 860px) and (min-width: 561px) {
+  .photo-grid-item { min-height: 260px; }
+}
+@media (max-width: 560px) {
+  .photo-grid-item { min-height: 220px; }
+}
+
+.photo-slot--portrait { min-height: 380px; }
+@media (max-width: 860px) {
+  .photo-slot--portrait { min-height: 440px; }
+}
+@media (max-width: 560px) {
+  .photo-slot--portrait { min-height: 320px; }
+}
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -496,6 +516,61 @@ a { color: inherit; text-decoration: none; }
 .bank-card dl { display: grid; grid-template-columns: 160px 1fr; row-gap: 10px; margin: 0; }
 .bank-card dt { color: var(--ink-soft); font-size: 0.85rem; }
 .bank-card dd { margin: 0; font-weight: 600; }
+
+.donate-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 34px;
+  border-left: 5px solid #0070ba;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.donate-actions {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 0.6rem;
+}
+.donate-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.donate-email {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+.donate-email span { font-weight: 600; color: var(--ink); }
+.btn-paypal {
+  background: #ffc439;
+  color: #003087;
+}
+.btn-paypal:hover { background: #f2b632; }
+.btn-paypal svg { width: 22px; height: 22px; }
+.btn-stripe {
+  background: #635bff;
+  color: var(--white);
+}
+.btn-stripe:hover { background: #524adb; }
+.btn-stripe svg { width: 22px; height: 22px; }
+.donate-qr {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.donate-qr img {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 10px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+.donate-qr p { color: var(--ink-soft); font-size: 0.85rem; margin: 0; }
 
 .flyer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
 @media (max-width: 700px) { .flyer-grid { grid-template-columns: 1fr; } }
